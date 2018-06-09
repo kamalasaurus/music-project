@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "live-server": "^1.2.0",
+    "static-server": "^2.2.1",
     "tone": "^0.12.80",
     "tunajs": "^1.0.1",
     "twit": "^2.2.10"
