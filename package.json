@@ -1,0 +1,17 @@
+{
+  "name": "music-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.0",
+    "tone": "^0.12.80",
+    "tunajs": "^1.0.1"
+  }
+}
