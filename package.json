@@ -12,6 +12,7 @@
   "dependencies": {
     "live-server": "^1.2.0",
     "tone": "^0.12.80",
-    "tunajs": "^1.0.1"
+    "tunajs": "^1.0.1",
+    "twit": "^2.2.10"
   }
 }
