@@ -5,7 +5,12 @@
     <title>Musical stuff</title>
   </head>
   <body>
-    <script src="./main.js" type="module"></script>
+    <script src="./main.js" type="application/javascript"></script>
+    <!--
+      Didn't wan't to monkeypatch Tone.js or Tuna.js, so they are included as
+      scripts instead of ES6 modules. Hopefully deno.js will make hosting ES6
+      modules less problematic :(
+    -->
   </body>
 </html>
 
