@@ -1,11 +1,14 @@
 const {copy, concat, compile} = require('./exportify.js');
 
 const StaticServer = require('static-server');
+const WebSocket = require('ws');
 
 const Twit = require('twit');
 const secrets = require('./secrets.json');
 
+
 //build upon launch //////////////////////////////////////
+
 
 const scripts = [
   './node_modules/tone/build/Tone.min.js',
@@ -16,7 +19,27 @@ const scripts = [
 
 compile(scripts);
 
+
+//start server //////////////////////////////////////////
+
+
+const server = new StaticServer({
+  rootPath: './app',
+  port: 1337
+});
+
+server.start(() => {
+  console.log('server listening to', server.port);
+});
+
+//setup websockets //////////////////////////////////////
+
+
+const wss = new WebSocket({ server });
+
+
 //setup Twit ////////////////////////////////////////////
+
 
 const T = new Twit(secrets);
 //const stream = T.stream('statuses/filter', {track: 'love'});
@@ -57,21 +80,4 @@ function attemptReconnect() {
     }, exponentialDropoff);
   }
 }
-
-//setup websockets //////////////////////////////////////
-
-// listen to tweet event, fire websocket event
-
-
-
-//start server //////////////////////////////////////////
-
-const server = new StaticServer({
-  rootPath: './app',
-  port: 1337
-});
-
-server.start(() => {
-  console.log('server listening to', server.port);
-});
 
